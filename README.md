@@ -96,3 +96,19 @@ Counts bookings for each category with COUNT and GROUP BY. Expected: Cleaning 3,
 - Query 2 uses customer ID 4, which is the customer created by query 1, so run the queries in order.
 - Booking 5 has no invoice and no staff assignment, so it can be deleted. A booking that has either one cannot be deleted, because of the foreign keys.
 | `report/BSFM_Database_Report.docx` | The Word report with explanations and result screenshots |
+## Person 2 Addition: Staff, Assignment and Invoice
+
+This section documents the Staff, Assignment and Invoice tables, added by
+S M Shakhawat Azam (Student ID: 0222220005101194).
+
+| Folder or file | What it holds |
+|---|---|
+| `sql/04_person2_tables.sql` | Creates the Staff, Assignment and Invoice tables |
+| `sql/05_person2_sample_data.sql` | Fills those tables with sample data |
+| `sql/06_person2_queries.sql` | The 7 queries (CRUD, JOINs and an aggregate) |
+| `screenshots/p2-*.png` | Screenshots of every query result and table structure |
+| `report/Shakhawat_Azam_BSFM_Database_Report.pdf` | Full written report for this part of the project |
+
+**Staff**: staff_id, full_name, phone (unique), role, hire_date
+**Assignment**: assignment_id, booking_id (FK), staff_id (FK), assigned_date, role_in_job
+**Invoice**: invoice_id, booking_id (FK, unique), amount, issue_date, payment_status
